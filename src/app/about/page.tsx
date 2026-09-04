@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { ContentImage } from "@/components/ContentImage";
 import { CTA } from "@/components/CTA";
 import { PageHero } from "@/components/Hero";
+import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -70,11 +72,20 @@ export default function AboutPage() {
       <section className="bg-bg-alt py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6">
           <h2>Executive Director — Janice Neilson</h2>
-          <p className="mt-4 text-text-muted">
-            The founding executive director of Endeavor Children&apos;s Services,
-            Janice Secord Neilson, draws upon decades of experience in
-            international child welfare services.
-          </p>
+          <div className="mt-6 flex flex-col gap-8 sm:flex-row sm:items-start">
+            <ContentImage
+              src={siteImages.janiceWithChildren.src}
+              alt={siteImages.janiceWithChildren.alt}
+              width={siteImages.janiceWithChildren.width}
+              height={siteImages.janiceWithChildren.height}
+              className="h-auto w-full max-w-[300px] shrink-0 rounded-2xl border border-border shadow-sm sm:float-left sm:mr-6"
+            />
+            <p className="text-text-muted">
+              The founding executive director of Endeavor Children&apos;s Services,
+              Janice Secord Neilson, draws upon decades of experience in
+              international child welfare services.
+            </p>
+          </div>
 
           <h3 className="mt-8 text-xl">FXB China &amp; I Am Who?</h3>
           <p className="mt-4 text-text-muted">
@@ -148,6 +159,16 @@ export default function AboutPage() {
             Welfare (Thailand), The Child Welfare League of the Philippines
             (Philippines) and Holt Children&apos;s Services (Korea).
           </p>
+
+          <div className="mt-10 overflow-hidden rounded-2xl border border-border shadow-sm">
+            <ContentImage
+              src={siteImages.janiceNeilson.src}
+              alt={siteImages.janiceNeilson.alt}
+              width={siteImages.janiceNeilson.width}
+              height={siteImages.janiceNeilson.height}
+              className="h-auto w-full"
+            />
+          </div>
         </div>
       </section>
 

@@ -65,6 +65,12 @@ export const boardMembers = [
   {
     role: "Board Chair",
     name: "Scott Neilson",
+    image: {
+      src: "/images/scott-neilson.jpg",
+      alt: "Scott Neilson, Board Chair of Endeavor Children's Services",
+      width: 280,
+      height: 275,
+    },
     bio: [
       "Scott received a bachelor's degree in political science from the University of Washington, and received his law degree from Gonzaga University School of Law. From 1973 to 1984, Neilson served as Assistant Attorney General for Washington State. From 1984 to 1993, Neilson worked in private practice. In addition, Neilson served as the sole guardian ad litem for children in foster care in Thurston County.",
       "In 1993, Neilson was appointed Superior Court Commissioner. Since then, he has presided over hundreds of criminal and civil juvenile cases, including dependency (child abuse and neglect), termination of parental rights, youth at risk, children in need of services, and truancy actions.",
@@ -76,6 +82,12 @@ export const boardMembers = [
   {
     role: "Board Member",
     name: "Carolyn Gilman",
+    image: {
+      src: "/images/carolyn-gilman.jpg",
+      alt: "Carolyn Gilman, Board Member of Endeavor Children's Services",
+      width: 200,
+      height: 234,
+    },
     bio: [
       "Carolyn began her career working in children's television at Seattle's ABC-TV affiliate, winning an Emmy award for writing from the National Academy of Television Arts and Sciences.",
       "She has also worked for 18 years in early childhood education, both as a teacher at the University of Washington's Children's Center and at Pacific First Montessori in downtown Seattle.",
@@ -85,6 +97,12 @@ export const boardMembers = [
   {
     role: "Board Member",
     name: "Laurel Shelton",
+    image: {
+      src: "/images/laurel-shelton.jpg",
+      alt: "Laurel Shelton, Board Member of Endeavor Children's Services",
+      width: 200,
+      height: 255,
+    },
     bio: [
       "Laurel Shelton is a talented artist who, after studying elementary education, has pursued all manner of the arts for a lifetime. A small business owner for 15 years, Laurel worked as a professional seamstress in the field of interior design and historic restoration.",
       "Her volunteer work included public school art instruction, art classes at homes for vulnerable children, and pro bono sewing for the Spokane Historical Society restoration program.",

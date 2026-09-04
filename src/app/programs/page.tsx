@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { CTA } from "@/components/CTA";
 import { Hero } from "@/components/Hero";
+import { ContentImage } from "@/components/ContentImage";
 import { homeProgramCards, ProgramCards } from "@/components/ProgramCards";
 import { StatsBand } from "@/components/StatsBand";
+import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -18,6 +20,7 @@ export default function ProgramsPage() {
         eyebrow="Flagship Program"
         title="I Am Who?"
         lead="A UNICEF-recognized therapeutic tool that invites children into creative activities designed to enhance their emotional well-being — and creates a life book to be kept forever."
+        image={siteImages.iamwhoMission}
         primaryCta={{ href: "/programs/mission", label: "Program Mission" }}
         secondaryCta={{ href: "/programs/book", label: "About the Book" }}
         compact
@@ -25,14 +28,25 @@ export default function ProgramsPage() {
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-12 max-w-3xl">
-            <h2>Building Confidence, Hope &amp; Self-Esteem</h2>
-            <p className="mt-4 text-text-muted">
-              Endeavor&apos;s main focus is the I Am Who program — building
-              confidence, hope and self-esteem in children with broken hearts.
-              Each child creates their own life book, answering the question:{" "}
-              <em>I Am Who?</em>
-            </p>
+          <div className="mb-12 grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h2>Building Confidence, Hope &amp; Self-Esteem</h2>
+              <p className="mt-4 text-text-muted">
+                Endeavor&apos;s main focus is the I Am Who program — building
+                confidence, hope and self-esteem in children with broken hearts.
+                Each child creates their own life book, answering the question:{" "}
+                <em>I Am Who?</em>
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <ContentImage
+                src={siteImages.iamwhoBookCover.src}
+                alt={siteImages.iamwhoBookCover.alt}
+                width={siteImages.iamwhoBookCover.width}
+                height={siteImages.iamwhoBookCover.height}
+                className="h-auto w-full max-w-[260px] rounded-2xl border border-border shadow-lg"
+              />
+            </div>
           </div>
           <ProgramCards cards={homeProgramCards} />
         </div>

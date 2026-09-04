@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContentImage } from "@/components/ContentImage";
 import { CTA } from "@/components/CTA";
 import { Hero } from "@/components/Hero";
 import {
@@ -8,6 +9,7 @@ import {
   ProgramCards,
 } from "@/components/ProgramCards";
 import { StatsBand } from "@/components/StatsBand";
+import { siteImages } from "@/lib/images";
 import { impactStats, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,6 +26,7 @@ export default function HomePage() {
         title="Changing the world, one child at a time"
         lead="Endeavor Children's Services brings hope and opportunity to orphans and vulnerable children around the world through innovative programs in health, nutrition, education, and psycho-social care."
         quote={siteConfig.quote}
+        image={{ ...siteImages.homepageBanner, priority: true }}
         primaryCta={{ href: "/get-involved", label: "Support Our Mission" }}
         secondaryCta={{ href: "/programs", label: "Explore Programs" }}
       />
@@ -38,6 +41,22 @@ export default function HomePage() {
               law, psychology, and art who share a dedication to improving the
               lives of children most in need — anywhere in the world.
             </p>
+          </div>
+          <div className="mb-12 grid gap-6 md:grid-cols-2">
+            <ContentImage
+              src={siteImages.childrenProgram.src}
+              alt={siteImages.childrenProgram.alt}
+              width={siteImages.childrenProgram.width}
+              height={siteImages.childrenProgram.height}
+              className="h-auto w-full rounded-2xl border border-border shadow-sm"
+            />
+            <ContentImage
+              src={siteImages.childrenCommunity.src}
+              alt={siteImages.childrenCommunity.alt}
+              width={siteImages.childrenCommunity.width}
+              height={siteImages.childrenCommunity.height}
+              className="h-auto w-full rounded-2xl border border-border shadow-sm"
+            />
           </div>
           <ProgramCards cards={homeServeCards} />
         </div>

@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { ContentImage } from "@/components/ContentImage";
+import { siteImages } from "@/lib/images";
 import { programLinks, siteConfig } from "@/lib/site";
 
 function isActive(pathname: string, href: string) {
@@ -78,24 +80,18 @@ export function Header() {
       <div className="relative mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-4 px-6">
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-3 text-text no-underline"
+          className="flex shrink-0 items-center text-text no-underline"
           aria-label={`${siteConfig.name} home`}
           onClick={closeMobile}
         >
-          <div
-            className="flex h-11 w-11 items-center justify-center rounded-[10px] bg-gradient-to-br from-primary to-primary-dark font-display text-xl font-bold text-white"
-            aria-hidden="true"
-          >
-            E
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="font-display text-lg font-semibold">
-              {siteConfig.shortName}
-            </span>
-            <span className="text-[0.7rem] tracking-wide text-text-muted">
-              {siteConfig.tagline}
-            </span>
-          </div>
+          <ContentImage
+            src={siteImages.logo.src}
+            alt={siteImages.logo.alt}
+            width={siteImages.logo.width}
+            height={siteImages.logo.height}
+            priority
+            className="h-10 w-auto max-w-[220px] sm:h-12 sm:max-w-[260px]"
+          />
         </Link>
 
         <button

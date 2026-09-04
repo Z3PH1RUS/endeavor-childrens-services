@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContentImage } from "@/components/ContentImage";
 import { CTA } from "@/components/CTA";
 import { PageHero } from "@/components/Hero";
+import { siteImages } from "@/lib/images";
 import { programActivities } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -25,14 +27,23 @@ export default function ActivitiesPage() {
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-12 max-w-3xl">
-            <h2>Guided Creative Modules</h2>
-            <p className="mt-4 text-text-muted">
-              Each activity begins with a creative &ldquo;game.&rdquo; When
-              completed, the child makes an entry in their book — photos,
-              artwork, reflections, and memories that build a lasting record of
-              their resilience.
-            </p>
+          <div className="mb-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:items-start">
+            <ContentImage
+              src={siteImages.childrenProgram.src}
+              alt={siteImages.childrenProgram.alt}
+              width={siteImages.childrenProgram.width}
+              height={siteImages.childrenProgram.height}
+              className="h-auto w-full rounded-2xl border border-border shadow-sm"
+            />
+            <div>
+              <h2>Guided Creative Modules</h2>
+              <p className="mt-4 text-text-muted">
+                Each activity begins with a creative &ldquo;game.&rdquo; When
+                completed, the child makes an entry in their book — photos,
+                artwork, reflections, and memories that build a lasting record of
+                their resilience.
+              </p>
+            </div>
           </div>
 
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

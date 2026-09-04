@@ -1,10 +1,20 @@
 import Link from "next/link";
+import { ContentImage } from "@/components/ContentImage";
+
+type HeroImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  priority?: boolean;
+};
 
 type HeroProps = {
   eyebrow?: string;
   title: string;
   lead: string;
   quote?: string;
+  image?: HeroImage;
   primaryCta?: { href: string; label: string };
   secondaryCta?: { href: string; label: string };
   compact?: boolean;
@@ -15,6 +25,7 @@ export function Hero({
   title,
   lead,
   quote,
+  image,
   primaryCta,
   secondaryCta,
   compact = false,
@@ -93,6 +104,18 @@ export function Hero({
             )}
           </div>
         )}
+        {image && (
+          <div className="mt-12 overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/20">
+            <ContentImage
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              priority={image.priority}
+              className="h-auto w-full"
+            />
+          </div>
+        )}
       </div>
     </section>
   );
@@ -102,10 +125,12 @@ export function PageHero({
   title,
   lead,
   breadcrumbs,
+  image,
 }: {
   title: string;
   lead: string;
   breadcrumbs: { label: string; href?: string }[];
+  image?: HeroImage;
 }) {
   return (
     <section className="bg-bg-alt py-12 md:py-16">
@@ -135,8 +160,23 @@ export function PageHero({
             ))}
           </ol>
         </nav>
-        <h1>{title}</h1>
-        <p className="mt-4 max-w-2xl text-lg text-text-muted">{lead}</p>
+        <div className={image ? "grid gap-8 lg:grid-cols-2 lg:items-center" : undefined}>
+          <div>
+            <h1>{title}</h1>
+            <p className="mt-4 max-w-2xl text-lg text-text-muted">{lead}</p>
+          </div>
+          {image && (
+            <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+              <ContentImage
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                className="h-auto w-full"
+              />
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { ContentImage } from "@/components/ContentImage";
 import { CTA } from "@/components/CTA";
 import { PageHero } from "@/components/Hero";
 import { ProgramCards } from "@/components/ProgramCards";
+import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -89,6 +91,13 @@ export default function GetInvolvedPage() {
             </div>
 
             <div className="rounded-2xl border border-border bg-primary-light p-8">
+              <ContentImage
+                src={siteImages.logo.src}
+                alt={siteImages.logo.alt}
+                width={siteImages.logo.width}
+                height={siteImages.logo.height}
+                className="mb-6 h-auto w-full max-w-sm"
+              />
               <h2 className="text-2xl">Make a Gift</h2>
               <p className="mt-4 text-text-muted">
                 If you are able to contribute to our mission, please make a

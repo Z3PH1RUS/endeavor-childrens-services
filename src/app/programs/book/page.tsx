@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContentImage } from "@/components/ContentImage";
 import { PageHero } from "@/components/Hero";
+import { siteImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "I Am Who? Book",
@@ -25,6 +27,7 @@ export default function BookPage() {
       <PageHero
         title="I Am Who? Book"
         lead="A year of uplifting activities — a child's memory book to be kept and treasured for a lifetime."
+        image={siteImages.iamwhoBookCover}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Programs", href: "/programs" },
@@ -34,6 +37,15 @@ export default function BookPage() {
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6">
+          <div className="mb-12 flex justify-center lg:hidden">
+            <ContentImage
+              src={siteImages.iamwhoBookCover.src}
+              alt={siteImages.iamwhoBookCover.alt}
+              width={siteImages.iamwhoBookCover.width}
+              height={siteImages.iamwhoBookCover.height}
+              className="h-auto w-full max-w-[231px] rounded-2xl border border-border shadow-lg"
+            />
+          </div>
           <blockquote className="mb-12 rounded-2xl border-l-4 border-primary bg-primary-light p-6 font-display text-xl italic text-text">
             &ldquo;This painting game makes me feel warm in my heart.&rdquo;
           </blockquote>

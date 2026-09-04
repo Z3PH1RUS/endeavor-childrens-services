@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/Hero";
 import { StatsBand } from "@/components/StatsBand";
+import { siteImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "I Am Who? Mission",
@@ -15,6 +16,7 @@ export default function MissionPage() {
       <PageHero
         title="I Am Who? Mission"
         lead="Hope and healing for the hearts of children through creative expression."
+        image={siteImages.iamwhoMission}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Programs", href: "/programs" },

@@ -52,6 +52,7 @@ Crawl inventory and design notes are in `/research/`:
 - `sitemap.md` — Full URL list and hierarchy
 - `content-inventory.md` — Per-page content summary
 - `brand-notes.md` — Colors, tone, audiences
+- `image-inventory.md` — Original site images and local asset map
 - `reference-notes.md` — Sheltering Arms design inspiration notes
 
 ## Design Documentation
@@ -77,5 +78,5 @@ The original static HTML/CSS/JS redesign is preserved in `_archive_static/` for 
 
 - **Domain:** The live site is at `endeavorchildrensservices.org` (double "s"). The URL `endeavorchildrenservices.org` (single "s") does not resolve.
 - **Donate:** PayPal link preserved from original site (`business=4K8UHJPABKAJL`).
-- **Logo:** Placeholder typographic mark — replace with official Endeavor logo asset when available.
+- **Logo:** Official Endeavor banner logo from endeavorchildrensservices.org (`public/images/logo-banner.png`).
 - **GitHub Pages:** Built with `GITHUB_PAGES=true npm run build` and deployed to the `gh-pages` branch. The site is served from `/endeavor-childrens-services/` on GitHub Pages.
