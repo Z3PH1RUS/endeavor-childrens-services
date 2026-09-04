@@ -67,7 +67,7 @@ See [TECH.md](TECH.md) for technical architecture and stack details.
 - **Tailwind CSS 4**
 - **next/font** — Source Serif 4 + DM Sans
 - SEO: metadata API, Open Graph, `sitemap.ts`, `robots.ts`
-- **Hosting:** GitHub Pages via GitHub Actions
+- **Hosting:** GitHub Pages (static files on `gh-pages` branch)
 
 ## Archive
 
@@ -78,4 +78,4 @@ The original static HTML/CSS/JS redesign is preserved in `_archive_static/` for 
 - **Domain:** The live site is at `endeavorchildrensservices.org` (double "s"). The URL `endeavorchildrenservices.org` (single "s") does not resolve.
 - **Donate:** PayPal link preserved from original site (`business=4K8UHJPABKAJL`).
 - **Logo:** Placeholder typographic mark — replace with official Endeavor logo asset when available.
-- **GitHub Pages:** Deploys automatically on push to `main`. The site is served from `/endeavor-childrens-services/` on GitHub Pages.
+- **GitHub Pages:** Built with `GITHUB_PAGES=true npm run build` and deployed to the `gh-pages` branch. The site is served from `/endeavor-childrens-services/` on GitHub Pages.
