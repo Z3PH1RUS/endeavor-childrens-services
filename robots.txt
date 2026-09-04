@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://z3ph1rus.github.io/endeavor-childrens-services/sitemap.xml
