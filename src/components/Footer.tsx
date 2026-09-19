@@ -33,6 +33,14 @@ export function Footer() {
                   About Us
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/programs"
+                  className="text-white/75 transition-colors hover:text-white"
+                >
+                  Programs
+                </Link>
+              </li>
               {exploreLinks.map((link) => (
                 <li key={link.href}>
                   <Link

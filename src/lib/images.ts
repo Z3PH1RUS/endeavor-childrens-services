@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/site";
+
 export const siteImages = {
   logo: {
     src: "/images/logo-banner.png",
@@ -68,3 +70,10 @@ export const siteImages = {
 } as const;
 
 export type SiteImageKey = keyof typeof siteImages;
+
+/** Absolute URL for metadata (Open Graph / Twitter), including GitHub Pages basePath. */
+export function absoluteImageUrl(src: string): string {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const path = src.startsWith("/") ? `${basePath}${src}` : src;
+  return new URL(path, siteConfig.url).href;
+}

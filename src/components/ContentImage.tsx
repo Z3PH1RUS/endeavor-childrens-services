@@ -11,13 +11,27 @@ function withBasePath(src: string): string {
   return `${basePath}${src}`;
 }
 
-export function ContentImage({ src, alt, className, ...props }: ContentImageProps) {
+const DEFAULT_SIZES =
+  "(max-width: 640px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 50vw, 640px";
+
+export function ContentImage({
+  src,
+  alt,
+  className,
+  sizes = DEFAULT_SIZES,
+  priority,
+  loading,
+  ...props
+}: ContentImageProps) {
   return (
     <Image
       src={withBasePath(src)}
       alt={alt}
       unoptimized
       className={className}
+      sizes={sizes}
+      priority={priority}
+      loading={priority ? undefined : loading ?? "lazy"}
       {...props}
     />
   );

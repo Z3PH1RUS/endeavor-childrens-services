@@ -3,7 +3,7 @@ import { DM_Sans, Source_Serif_4 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SkipLink } from "@/components/SkipLink";
-import { siteImages } from "@/lib/images";
+import { absoluteImageUrl, siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: siteImages.homepageBanner.src,
+        url: absoluteImageUrl(siteImages.homepageBanner.src),
         width: siteImages.homepageBanner.width,
         height: siteImages.homepageBanner.height,
         alt: siteImages.homepageBanner.alt,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [siteImages.homepageBanner.src],
+    images: [absoluteImageUrl(siteImages.homepageBanner.src)],
   },
   robots: {
     index: true,

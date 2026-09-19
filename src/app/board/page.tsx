@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContentImage } from "@/components/ContentImage";
+import { CTA } from "@/components/CTA";
 import { PageHero } from "@/components/Hero";
 import { boardMembers } from "@/lib/site";
 
@@ -54,6 +55,13 @@ export default function BoardPage() {
           </div>
         </div>
       </section>
+
+      <CTA
+        title="Support the mission our board guides"
+        description="Volunteer leaders steward Endeavor's work worldwide. Your gift helps carry that mission forward."
+        buttonLabel="Get Involved"
+        buttonHref="/get-involved"
+      />
     </>
   );
 }
