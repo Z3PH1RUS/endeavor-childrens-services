@@ -64,7 +64,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col">
         <SkipLink />
         <Header />
-        <main id="main" className="flex-1">
+        <main id="main" tabIndex={-1} className="flex-1">
           {children}
         </main>
         <Footer />

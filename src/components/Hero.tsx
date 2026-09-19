@@ -89,7 +89,7 @@ export function Hero({
             {primaryCta && (
               <Link
                 href={primaryCta.href}
-                className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-lg font-semibold text-primary transition-colors hover:bg-primary-light"
+                className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-lg font-semibold text-primary transition-colors hover:bg-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-dark"
               >
                 {primaryCta.label}
               </Link>
@@ -97,7 +97,7 @@ export function Hero({
             {secondaryCta && (
               <Link
                 href={secondaryCta.href}
-                className="inline-flex items-center justify-center rounded-xl border-2 border-white/80 px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-xl border-2 border-white/80 px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-dark"
               >
                 {secondaryCta.label}
               </Link>

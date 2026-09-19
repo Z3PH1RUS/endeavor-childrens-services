@@ -14,8 +14,7 @@ import { impactStats, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Hope for Every Child",
-  description:
-    "Endeavor Children's Services brings hope and opportunity to orphans and vulnerable children around the world through innovative programs including I Am Who?",
+  description: siteConfig.description,
 };
 
 export default function HomePage() {

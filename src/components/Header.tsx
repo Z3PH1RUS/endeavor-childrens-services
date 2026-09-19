@@ -17,7 +17,10 @@ function isProgramsActive(pathname: string) {
 }
 
 const navItemClass =
-  "block rounded-lg px-4 py-2 font-medium transition-colors hover:bg-primary-light hover:text-primary-dark";
+  "block rounded-lg px-4 py-2 font-medium transition-colors hover:bg-primary-light hover:text-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2";
+
+const logoSlotClass =
+  "flex h-10 w-[139px] shrink-0 items-center sm:h-12 sm:w-[167px]";
 
 export function Header() {
   const pathname = usePathname();
@@ -80,7 +83,7 @@ export function Header() {
       <div className="relative mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-4 px-6">
         <Link
           href="/"
-          className="flex shrink-0 items-center text-text no-underline"
+          className={`${logoSlotClass} text-text no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
           aria-label={`${siteConfig.name} home`}
           onClick={closeMobile}
         >
@@ -89,14 +92,14 @@ export function Header() {
             alt={siteImages.logo.alt}
             width={siteImages.logo.width}
             height={siteImages.logo.height}
-            priority
-            className="h-10 w-auto max-w-[220px] sm:h-12 sm:max-w-[260px]"
+            sizes="(min-width: 640px) 167px, 139px"
+            className="h-full w-full object-contain object-left"
           />
         </Link>
 
         <button
           type="button"
-          className="rounded-lg p-2 text-text md:hidden"
+          className="rounded-lg p-2 text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 md:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
@@ -135,7 +138,7 @@ export function Header() {
               <button
                 type="button"
                 id={`${programsMenuId}-button`}
-                className={`flex w-full items-center justify-between rounded-lg px-4 py-2 font-medium transition-colors hover:bg-primary-light hover:text-primary-dark md:w-auto ${
+                className={`flex w-full items-center justify-between rounded-lg px-4 py-2 font-medium transition-colors hover:bg-primary-light hover:text-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 md:w-auto ${
                   isProgramsActive(pathname) ? "text-primary" : "text-text"
                 }`}
                 aria-expanded={programsOpen}
@@ -170,7 +173,7 @@ export function Header() {
                       <Link
                         href={link.href}
                         role="menuitem"
-                        className={`block px-4 py-2 text-sm transition-colors hover:bg-primary-light hover:text-primary-dark ${
+                        className={`block px-4 py-2 text-sm transition-colors hover:bg-primary-light hover:text-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
                           active ? "font-semibold text-primary" : "text-text"
                         }`}
                         aria-current={active ? "page" : undefined}
@@ -194,7 +197,7 @@ export function Header() {
               href={siteConfig.paypalDonate}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-xl bg-primary px-5 py-2.5 font-semibold text-white transition-colors hover:bg-primary-dark md:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-primary px-5 py-2.5 font-semibold text-white transition-colors hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 md:w-auto"
               onClick={closeMobile}
             >
               Donate
